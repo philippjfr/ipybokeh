@@ -71,7 +71,7 @@ class BokehView extends DOMWidgetView {
 
   rerender() {
     const bundle = JSON.parse(this.model.get('render_bundle'));
-	const {doc_json, render_items, div} = bundle 
+    const {doc_json, render_items, div} = bundle
     this.el.innerHTML = div;
     const element = this.el.children[0];
     const json: any = values(doc_json)[0];
@@ -86,7 +86,7 @@ class BokehView extends DOMWidgetView {
   }
 
   _change_event(event: any) {
-	if (!this._blocked)
+    if (!this._blocked)
       this.send({'event': 'jsevent', id: event.model.id, new: event.new_, attr: event.attr, old: event.old})
   }
 
@@ -97,9 +97,9 @@ class BokehView extends DOMWidgetView {
       this._receiver.consume(content.payload)
       const comm_msg = this._receiver.message;
       if ((comm_msg != null) && (Object.keys(comm_msg.content).length > 0)) {
-		this._blocked = true;
+        this._blocked = true;
         this._document.apply_json_patch(comm_msg.content, comm_msg.buffers)
-		this._blocked = false;
+        this._blocked = false;
       }
     }
   }
