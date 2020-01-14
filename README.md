@@ -5,7 +5,7 @@
 [![codecov](https://codecov.io/gh/pyviz/ipybokeh/branch/master/graph/badge.svg)](https://codecov.io/gh/pyviz/ipybokeh)
 
 
-A Jupyter widget for rendering bokeh
+A Jupyter widget for rendering bokeh. This prototype has since been moved into the [official Bokeh Jupyter extension](https://github.com/bokeh/jupyter_bokeh).
 
 ## Installation
 
